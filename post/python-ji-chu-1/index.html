@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>Python 基础 -1 | 小笨熊</title>
+<meta name="description" content="温故而知新-每天进步一点点">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="shortcut icon" href="https://owenbearpython.github.io/favicon.ico">
+<link rel="stylesheet" href="https://owenbearpython.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://owenbearpython.github.io">
+        <img class="avatar" src="https://owenbearpython.github.io/images/avatar.png" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://owenbearpython.github.io">
+        <h1 class="site-title">小笨熊</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          <h2 class="post-title">Python 基础 -1</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2019-04-09</span>
+            
+          </div>
+          <div class="post-content">
+            <p>1、命令行模式：<br>      Windows自带的命令提示符，c:><br><img src="https://owenbearpython.github.io/post-images/1554818092557.png" alt=""><br>2、Python交互模式：<br>      在命令行模式下键入python即可进入，&gt;&gt;&gt;<br>            <img src="https://owenbearpython.github.io/post-images/1554818120931.png" alt=""><br>可以用 exit() 退出，回到命令行模式<br>3、在命令行模式下切换到指定文件夹：<br>    &amp;在命令行模式下运行.py文件：<br>        cd 目录<br><img src="https://owenbearpython.github.io/post-images/1554818153410.png" alt=""><br>4、注释<br>      以 # 开头的都会被忽略<br>5、缩进<br>     可以使用4个空格的缩进形式，每一层都是用4个空格的缩进<br>6、Python是对大小写敏感，不能混用<br>7、数据类型</p>
+<ul>
+<li>整数</li>
+<li>浮点数（小数）</li>
+<li>字符串  使用 &#39; 或者 ”括起来，里面需要有特殊字符时，需要在前面加转义字符 \  来让系统知道  （\n换行符  \t制表符 \表示一个斜杠\）（特殊：r &#39;均为不转义内容&#39;）</li>
+<li>布尔值 True/False两种状态    可以进行 or and not运算</li>
+<li>空值 None 不表示0 ，是一个特殊的空值</li>
+<li>还有列表，字典，还能自定义数据类型...<br>8、在一行代码写不完到了第二行的时候，行头的...不是代码，只是提示接着上一行内容<br>9、变量</li>
+<li>可以是任意数据类型</li>
+<li>变量名必须是“大小写英文”，“数字”和“_”的组合，且不能数字开头</li>
+<li>同一个变量的数据类型可以改变，可以不断对其进行赋予不同数据类型的值，这种也是Python的特点，变量本身类型不固定的，所以Python是动态语言。而像Java等叫静态语言，变量在定义的时候就要给定一个数据类型，并不可改变。<br>10、常量<pre><code>  常用全部大写的变量名表示常量</code></pre>11、两种除法</li>
+<li>“/” 结果是浮点数，即便是整除，结果也会是浮点数</li>
+<li>“//”也叫“地板除”，两个整数除法仍是整数，只保留了整数部分</li>
+<li>“%”求余，可以得到余数<br>12、字符编码</li>
+<li>ASCII 编码 --不兼容中文显示</li>
+<li>Unicode 编码 --可以兼容中文，但是表示英文字母内存会多一倍</li>
+<li>UTF-8 编码 --是上面两种的结合，可变长编码<br><img src="https://owenbearpython.github.io/post-images/1554818212684.png" alt=""><br>※Python 3中的字符串是以Unicode 编码，是以Python原生支持多语言</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>ord()</th>
+<th>获取字符的整数表示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>chr()</td>
+<td>把编码转换成对应的字符</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Python中字符串类型是 str ，在内存中以Unicode表示（一个字符对应若干个字节）。要在网络传输或者保存到磁盘，需要把str转换为以字节为单位的 bytes<br><img src="https://owenbearpython.github.io/post-images/1554818528135.png" alt=""></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>encode()</th>
+<th>把str指定为单个字节的bytes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>decode()</td>
+<td>把bytes转换回去字符串</td>
+</tr>
+<tr>
+<td>len()</td>
+<td>计算str中包含多少个字符，如果转换为Bytes了，则计算字节数</td>
+</tr>
+</tbody></table>
+<p>※ 要让Python解释器能够按照UTF-8读取程序，需要加两条注释</p>
+<table>
+<thead>
+<tr>
+<th>#!/usr/bin/env python3</th>
+<th>Linux/OS X下，win会忽略这条</th>
+</tr>
+</thead>
+<tbody><tr>
+<td># -<em>- coding: utf-8 -</em>-</td>
+<td>告诉解释器按照UTF-8读取代码</td>
+</tr>
+<tr>
+<td><img src="https://owenbearpython.github.io/post-images/1554818869434.png" alt=""></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>13、格式化</p>
+<ul>
+<li>使用 % 加类型，作为替换内容的标记<pre><code>&gt;&gt;&gt; &#39;Hello, %s&#39; % &#39;world&#39;
+&#39;Hello, world&#39;
+&gt;&gt;&gt; &#39;Hi, %s, you have $%d.&#39; % (&#39;Michael&#39;, 1000000)
+&#39;Hi, Michael, you have $1000000.&#39;</code></pre></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>%d</th>
+<th>整数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%f</td>
+<td>浮点数</td>
+</tr>
+<tr>
+<td>%s</td>
+<td>字符串</td>
+</tr>
+<tr>
+<td>%x</td>
+<td>十六进制整数</td>
+</tr>
+</tbody></table>
+<ul>
+<li>有些时候，字符串里面的%是一个普通字符怎么办？这个时候就需要转义，用%%来表示一个%：<pre><code>&gt;&gt;&gt; &#39;growth rate: %d %%&#39; % 7
+&#39;growth rate: 7 %&#39;</code></pre></li>
+<li>使用format() 方法格式化。它会用传入的参数依次替换字符串内的占位符{0}、{1}……，不过这种方式写起来比%要麻烦得多<pre><code>&gt;&gt;&gt; &#39;Hello, {0}, 成绩提升了 {1:.1f}%&#39;.format(&#39;小明&#39;, 17.125) &#39;Hello, 小明, 成绩提升了 17.1%&#39;</code></pre></li>
+</ul>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://owenbearpython.github.io/post/di-yi-ge-bo-ke">
+              <h3 class="post-title">
+                下一篇：第一个博客
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">温故而知新-每天进步一点点</div>
+  Powered by Hve Notes
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
