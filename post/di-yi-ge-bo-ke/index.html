@@ -1,105 +1,132 @@
+
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>第一个博客 | Hve Notes</title>
+    
+<meta charset="utf-8" >
+
+<title>第一个博客 | 小笨熊</title>
+<meta name="description" content="温故而知新-每天进步一点点">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
 <link rel="shortcut icon" href="https://owenbearpython.github.io/favicon.ico">
 <link rel="stylesheet" href="https://owenbearpython.github.io/styles/main.css">
 
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
 
 
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://owenbearpython.github.io">
-  <img class="avatar" src="https://owenbearpython.github.io/images/avatar.png" alt="" width="80px" height="80px">
-  </a>
-  <h1 class="site-title">
-    Hve Notes
-  </h1>
-  <p class="site-description">
-    温故而知新
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://owenbearpython.github.io">
+        <img class="avatar" src="https://owenbearpython.github.io/images/avatar.png" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://owenbearpython.github.io">
+        <h1 class="site-title">小笨熊</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
   </div>
 </div>
 
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
       
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
         <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              第一个博客
-            </h2>
-            <div class="post-info">
-              <time class="post-time">
-                · 2019-04-09 ·
-              </time>
-              
-            </div>
-            <div class="post-content">
-              <h1 id="hi 大家好">Hi 大家好</h1><p>##这是我的第一个帖子，纯为了测试。想要做一个笔记，用来记录我的生活，学习。</p>
+          <h2 class="post-title">第一个博客</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2019-04-09</span>
+            
+          </div>
+          <div class="post-content">
+            <h1 id="hi 大家好">Hi 大家好</h1><p>##这是我的第一个帖子，纯为了测试。想要做一个笔记，用来记录我的生活，学习。</p>
 <ol>
 <li>我想要自我改变</li>
 <li>我想要正确承认，接受自己</li>
 <li>我想要每天有一点新东西更新上来，证明自己每天尽量都能有进步！</li>
 </ol>
 
-            </div>
-          </article>
+          </div>
         </div>
-    
-        
-          <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://owenbearpython.github.io/post/hello-hve-notes">
-              <h3 class="post-title">
-                Hello Hve Notes
-              </h3>
-            </a>
-          </div>  
-        
 
         
-    
-        <div class="site-footer">
+          <div class="next-post">
+            <a class="purple-link" href="https://owenbearpython.github.io/post/hello-hve-notes">
+              <h3 class="post-title">
+                下一篇：Hello Hve Notes
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">温故而知新-每天进步一点点</div>
   Powered by Hve Notes
 </div>
 
-<script>
-  hljs.initHighlightingOnLoad()
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
 
-      </div>
-    </div>
+
+
+
   </body>
 </html>
